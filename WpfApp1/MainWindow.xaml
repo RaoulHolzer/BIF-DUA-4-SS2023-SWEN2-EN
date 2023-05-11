@@ -10,13 +10,11 @@
         <local:TourViewModel/>
     </Window.DataContext>
 
-
-
     <StackPanel>
+        <local:SerachBox DataContext="{Binding SearchViewModel}"/>
         <ListBox Width="200"  
                  ItemsSource="{Binding NameList, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged }"
-                 IsSynchronizedWithCurrentItem="True">
-
+                 >
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal" >
@@ -25,10 +23,6 @@
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
-
         </ListBox>
-        <TextBlock x:Name="MyTextBlock"  Text="{Binding MyText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged }"></TextBlock>
-        <TextBox x:Name="MyTextBox" Text="{Binding MyText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
-        <Button  Content="Click Me" Command="{Binding ButtonClickCommand}"  ></Button>
     </StackPanel>
 </Window>
